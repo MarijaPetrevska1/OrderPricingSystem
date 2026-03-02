@@ -1,10 +1,9 @@
 ## Order Pricing System for an e-commerce platform
+
 => OrderPricingSystem is a .NET Web API that calculates order pricing for an e-commerce platform.
 The system processes product pricing based on quantity, applies tiered discounts when applicable, calculates country-based tax, and returns a detailed pricing breakdown.
 
--- 
-
-# Technologies Used
+Technologies Used
 
 .NET (latest stable version)
 
@@ -16,7 +15,7 @@ Dependency Injection
 
 Clean OOP structure
 
-# 🚀 How to Run
+🚀 How to Run
 
 Clone the repository
 
