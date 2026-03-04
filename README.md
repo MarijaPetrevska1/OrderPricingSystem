@@ -15,8 +15,7 @@ cd OrderPricingSystem
 
 2. Run the application
 
-dotnet run
-The API will start on: The API will start on:
+dotnet run https://localhost:XXXX
 
 3. Open Swagger UI
  
