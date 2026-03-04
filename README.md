@@ -3,9 +3,10 @@
 OrderPricingSystem is a .NET Web API that calculates order pricing for an e-commerce platform.
 The system processes product pricing based on quantity, applies tiered discounts when applicable, calculates country-based tax, and returns a detailed pricing breakdown.
 
-Technologies Used: .NET (latest stable version), ASP.NET Core Web API, JSON file as data source (no database), Dependency Injection, Clean OOP structure
+### Technologies Used: 
+.NET (latest stable version), ASP.NET Core Web API, JSON file as data source (no database), Dependency Injection, Clean OOP structure
 
-🚀 How to run this project: 
+### 🚀 How to run this project: 
 
 1. Clone the repository
 git clone [<your-repository-link>](https://github.com/MarijaPetrevska1/OrderPricingSystem)
@@ -24,12 +25,12 @@ Use the endpoint: GET /api/pricing/calculate
 
 Example request: /api/pricing/calculate?productId=PROD-001&quantity=55&country=MK
 
-🧮 Calculated Results for Test Cases
+### 🧮 Calculated Results for Test Cases
 
 Product: PROD-001 – Premium Widget
 Unit Price: 12.00 EUR
 
-Test Case 1
+### Test Case 1
 
 Input:
 
@@ -46,7 +47,7 @@ Tax (18% MK) = 106.92
 
 ✅ Final Price = 700.92 EUR
 
-Test Case 2
+### Test Case 2
 
 Input:
 
@@ -63,7 +64,7 @@ Subtotal after discount = 1020
 Tax (20% DE) = 204
 ✅ Final Price = 1224.00 EUR
 
-Test Case 3
+### Test Case 3
 
 Input:
 
@@ -78,7 +79,7 @@ No discount (subtotal < 500 threshold)
 Tax (10% USA) = 30
 ✅ Final Price = 330.00 EUR
 
-🛠 Bugs Fixed
+### 🛠 Bugs Fixed
 
 1️⃣ Incorrect Tax Calculation
 
@@ -134,18 +135,18 @@ Implemented GetProduct() method to load products from products.json.
 
 Implemented BuildResponse() method to return the full pricing breakdown.
 
-🧱 OOP Principles Applied
+### 🧱 OOP Principles Applied
 
 
-Separation of concerns (Controller vs Service)
+- Separation of concerns (Controller vs Service)
 
-Dependency Injection
+- Dependency Injection
 
-Logging
+- Logging
 
-Error handling with proper HTTP status codes
+- Error handling with proper HTTP status codes
 
-Encapsulation (private helper methods)
+- Encapsulation (private helper methods)
 
-Clean tier-based discount logic
+- Clean tier-based discount logic
 
