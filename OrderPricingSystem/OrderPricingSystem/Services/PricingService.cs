@@ -18,11 +18,9 @@ public class PricingService : IPricingService
     {
         try
         {
-            // Точна патека до JSON фајлот
             var basePath = AppDomain.CurrentDomain.BaseDirectory;
             var projectPath = Directory.GetCurrentDirectory();
 
-            // Пробај повеќе патеки
             string[] possiblePaths = new[]
             {
                 Path.Combine(projectPath, "Data", "products.json"),
@@ -51,7 +49,6 @@ public class PricingService : IPricingService
                 }
             }
 
-            // Ако не најде фајл, фрли грешка
             throw new FileNotFoundException("products.json not found. Please ensure the file exists in the Data folder.");
         }
         catch (Exception ex)
