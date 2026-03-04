@@ -5,7 +5,7 @@ OrderPricingSystem is a .NET Web API that calculates order pricing for an e-comm
 The system processes product pricing based on quantity, applies tiered discounts when applicable, calculates country-based tax, and returns a detailed pricing breakdown.
 
 #### Implemented Technologies: 
-.NET (latest stable version), ASP.NET Core Web API, JSON file as data source (no database), Dependency Injection, Clean OOP structure
+This project was built using .NET (latest stable version), ASP.NET Core Web API, JSON file as data source (no database), Dependency Injection, Clean OOP structure.
 
 ### 🚀 How to run this project: 
 
