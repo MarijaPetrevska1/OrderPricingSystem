@@ -27,13 +27,13 @@ Example request: /api/pricing/calculate?productId=PROD-001&quantity=55&country=M
 
 ### Project Structure
 
-#### Models
+- #### Models
 
 OrderRequest, PricingResponse, Product, ProductsContainer, Discount, Tax.
 
 These correctly represent the  request, response, and supporting objects.
 
-#### Services
+- #### Services
 
 IPricingService interface 
 
@@ -49,7 +49,7 @@ Logging + error handling included
 
 Note: Discount and tax calculations are correct, and rounding is applied to 2 decimals.
 
-#### Controller
+- #### Controller
 
 PricingController 
 
@@ -59,7 +59,7 @@ Validates query parameters, handles exceptions
 
 Returns BadRequest, NotFound, or 500 as needed 
 
-#### Program.cs
+- #### Program.cs
 
 Registers services and logging 
 
@@ -71,7 +71,7 @@ Maps controllers
 
 This ensures the project runs immediately after cloning and dotnet run.
 
-#### products.json
+- #### products.json
 
 Default product included 
 
