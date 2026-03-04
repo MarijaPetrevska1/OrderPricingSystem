@@ -20,7 +20,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Создај го Data директориумот и products.json ако не постојат
+
 var dataPath = Path.Combine(app.Environment.ContentRootPath, "Data");
 if (!Directory.Exists(dataPath))
 {
