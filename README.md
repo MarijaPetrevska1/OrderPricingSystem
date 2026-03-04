@@ -1,6 +1,7 @@
 ## Order Pricing System for an e-commerce platform
 
 OrderPricingSystem is a .NET Web API that calculates order pricing for an e-commerce platform.
+
 The system processes product pricing based on quantity, applies tiered discounts when applicable, calculates country-based tax, and returns a detailed pricing breakdown.
 
 ### Technologies Used: 
@@ -32,13 +33,13 @@ Unit Price: 12.00 EUR
 
 ### Test Case 1
 
-Input:
+*Input:*
 
 productId=PROD-001
 quantity=55
 country=MK
 
-Calculation:
+*Calculation:*
 
 Subtotal = 55 × 12 = 660
 
@@ -54,13 +55,13 @@ Tax (18% MK) = 106.92
 
 ### Test Case 2
 
-Input:
+*Input:*
 
 productId=PROD-001
 quantity=100
 country=DE
 
-Calculation:
+*Calculation:*
 
 Subtotal = 100 × 12 = 1200
 
@@ -76,13 +77,13 @@ Tax (20% DE) = 204
 
 ### Test Case 3
 
-Input:
+*Input:*
 
 productId=PROD-001
 quantity=25
 country=USA
 
-Calculation:
+*Calculation:*
 
 Subtotal = 25 × 12 = 300
 
@@ -96,13 +97,13 @@ Tax (10% USA) = 30
 
 1️⃣ Incorrect Tax Calculation
 
-Bug:
+*Bug:*
 
 Tax was calculated on the original subtotal.
 
 decimal taxAmount = subtotal * taxRate;
 
-Fix:
+*Fix:*
 
 Tax is now calculated on the amount AFTER discount:
 
@@ -110,13 +111,13 @@ decimal taxAmount = subtotalAfterDiscount * taxRate;
 
 2️⃣ Incorrect Discount Threshold
 
-Bug:
+*Bug:*
 
 Discount applied only when subtotal > 500.
 
 if (subtotal > 500)
 
-Fix:
+*Fix:*
 
 Changed to match business rule:
 
@@ -124,7 +125,7 @@ if (subtotal >= 500)
 
 3️⃣ Incorrect Tier Logic
 
-Bug:
+*Bug:*
 
 Discount conditions overwrote each other and were not properly ordered.
 
@@ -135,13 +136,15 @@ if (quantity > 50)
 if (quantity >= 100)
     discount = 0.15m;
 
-Problem:
+*Problem:*
 
 Conditions overlapped
+
 Order was incorrect
+
 Could cause wrong discount
 
-Fix:
+*Fix:*
 
 Implemented proper tier-based logic:
 if (quantity >= 100)
