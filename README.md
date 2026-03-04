@@ -35,11 +35,11 @@ These correctly represent the  request, response, and supporting objects.
 
 - #### Services
 
-IPricingService interface 
+*IPricingService* interface 
 
-PricingService implementation 
+*PricingService* implementation 
 
-Loads products from products.json 
+Loads products from *products.json* 
 
 Calculates subtotal, discount (tiered + threshold), tax 
 
@@ -51,7 +51,7 @@ Note: Discount and tax calculations are correct, and rounding is applied to 2 de
 
 - #### Controller
 
-PricingController 
+*PricingController* 
 
 GET /api/pricing/calculate endpoint 
 
