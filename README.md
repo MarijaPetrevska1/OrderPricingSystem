@@ -17,16 +17,22 @@ dotnet run
 The API will start on: The API will start on:
 
 3. Open Swagger UI
+ 
 https://localhost:XXXX/swagger
+
 Use the endpoint: GET /api/pricing/calculate
+
 Example request: /api/pricing/calculate?productId=PROD-001&quantity=55&country=MK
 
 🧮 Calculated Results for Test Cases
+
 Product: PROD-001 – Premium Widget
 Unit Price: 12.00 EUR
 
 Test Case 1
+
 Input:
+
 productId=PROD-001
 quantity=55
 country=MK
@@ -37,15 +43,19 @@ Discount = 10% (because quantity ≥ 50 and subtotal ≥ 500)
 Discount amount = 66
 Subtotal after discount = 594
 Tax (18% MK) = 106.92
+
 ✅ Final Price = 700.92 EUR
 
 Test Case 2
+
 Input:
+
 productId=PROD-001
 quantity=100
 country=DE
 
 Calculation:
+
 Subtotal = 100 × 12 = 1200
 Discount = 15%
 Discount amount = 180
@@ -54,19 +64,24 @@ Tax (20% DE) = 204
 ✅ Final Price = 1224.00 EUR
 
 Test Case 3
+
 Input:
+
 productId=PROD-001
 quantity=25
 country=USA
 
 Calculation:
+
 Subtotal = 25 × 12 = 300
 No discount (subtotal < 500 threshold)
 Tax (10% USA) = 30
 ✅ Final Price = 330.00 EUR
 
 🛠 Bugs Fixed
+
 1️⃣ Incorrect Tax Calculation
+
 Bug:
 Tax was calculated on the original subtotal.
 decimal taxAmount = subtotal * taxRate;
@@ -76,6 +91,7 @@ Tax is now calculated on the amount AFTER discount:
 decimal taxAmount = subtotalAfterDiscount * taxRate;
 
 2️⃣ Incorrect Discount Threshold
+
 Bug:
 Discount applied only when subtotal > 500.
 if (subtotal > 500)
@@ -85,6 +101,7 @@ Changed to match business rule:
 if (subtotal >= 500)
 
 3️⃣ Incorrect Tier Logic
+
 Bug:
 Discount conditions overwrote each other and were not properly ordered.
 
@@ -110,17 +127,25 @@ if (quantity >= 10)
     return 0.05m;
 
 4️⃣ Missing Product Loading
+
 Implemented GetProduct() method to load products from products.json.
 
 5️⃣ Missing Response Builder
+
 Implemented BuildResponse() method to return the full pricing breakdown.
 
 🧱 OOP Principles Applied
 
+
 Separation of concerns (Controller vs Service)
+
 Dependency Injection
+
 Logging
+
 Error handling with proper HTTP status codes
+
 Encapsulation (private helper methods)
+
 Clean tier-based discount logic
 
