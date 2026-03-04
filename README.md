@@ -25,6 +25,66 @@ Use the endpoint: GET /api/pricing/calculate
 
 Example request: /api/pricing/calculate?productId=PROD-001&quantity=55&country=MK
 
+### Project Structure
+
+# Models
+
+OrderRequest, PricingResponse, Product, ProductsContainer, Discount, Tax.
+
+These correctly represent the  request, response, and supporting objects.
+
+# Services
+
+IPricingService interface 
+
+PricingService implementation 
+
+Loads products from products.json 
+
+Calculates subtotal, discount (tiered + threshold), tax 
+
+Builds response 
+
+Logging + error handling included 
+
+Note: Discount and tax calculations are correct, and rounding is applied to 2 decimals.
+
+# Controller
+
+PricingController 
+
+GET /api/pricing/calculate endpoint 
+
+Validates query parameters, handles exceptions 
+
+Returns BadRequest, NotFound, or 500 as needed 
+
+# Program.cs
+
+Registers services and logging 
+
+Configures Swagger 
+
+Creates Data folder and default products.json if missing 
+
+Maps controllers 
+
+This ensures the project runs immediately after cloning and dotnet run.
+
+# products.json
+
+Default product included 
+
+{
+  "products": [
+    {
+      "id": "PROD-001",
+      "name": "Premium Widget",
+      "price": 12.00
+    }
+  ]
+}
+
 ### 🧮 Calculated Results for Test Cases
 
 Product: PROD-001 – Premium Widget
