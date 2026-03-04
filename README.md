@@ -10,7 +10,9 @@ The system processes product pricing based on quantity, applies tiered discounts
 ### 🚀 How to run this project: 
 
 1. Clone the repository
+   
 git clone [<your-repository-link>](https://github.com/MarijaPetrevska1/OrderPricingSystem)
+
 cd OrderPricingSystem
 
 2. Run the application
