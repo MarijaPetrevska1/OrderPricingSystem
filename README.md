@@ -1,4 +1,4 @@
-## Order Pricing System for an e-commerce platform
+💻 ## Order Pricing System for an e-commerce platform
 
 OrderPricingSystem is a .NET Web API that calculates order pricing for an e-commerce platform.
 
